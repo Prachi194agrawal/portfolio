@@ -1,0 +1,23 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prachi Agrawal | Portfolio</title>
+    <link rel="stylesheet" href="/src/styles/global.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+  </head>
+  <body>
+    <Navbar />
+    <main class="container mx-auto">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

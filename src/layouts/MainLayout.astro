@@ -1,0 +1,35 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import MouseEffect from '../components/MouseEffect.astro';
+
+const { title = "Prachi Agrawal Portfolio" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const storedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.className = storedTheme;
+      });
+
+      
+    </script>
+  </head>
+  <body class="bg-gray-50 dark:bg-gray-900 text-secondary dark:text-gray-200">
+    <MouseEffect />
+    <Navbar />
+    <main class="container mx-auto pt-16">
+      
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+

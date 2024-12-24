@@ -1,0 +1,94 @@
+/* Tailwind CSS base configuration */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Global styles */
+html {
+  background-color: #5f45bb;
+  background-image: linear-gradient(to bottom right, #180cac, #d054e4);
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  min-height: 100vh;
+  min-width: 300px;
+  overflow-x: hidden;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Links */
+a {
+  color: currentColor;
+  text-decoration: none;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+a:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+/* Buttons */
+button {
+  background-color: #fff;
+  color: #9013fe;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding: 1.25em 2em;
+  border: none;
+  border-radius: 290486px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+  transition: box-shadow 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animation-bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

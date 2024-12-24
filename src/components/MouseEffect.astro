@@ -1,0 +1,47 @@
+<script>
+    const handleMouseMove = (event: MouseEvent) => {
+      const cursor = document.querySelector('.cursor');
+      if (cursor) {
+        (cursor as HTMLElement).style.top = `${event.pageY}px`;
+        (cursor as HTMLElement).style.left = `${event.pageX}px`;
+      }
+    };
+  
+    const handleHover = (event:MouseEvent) => {
+      const cursor = document.querySelector('.cursor');
+      if (cursor) cursor.classList.add('hover');
+    };
+  
+    const handleHoverOut = (event:MouseEvent) => {
+      const cursor = document.querySelector('.cursor');
+      if (cursor) cursor.classList.remove('hover');
+    };
+  
+    document.addEventListener('mousemove', handleMouseMove);
+    document.querySelectorAll('a, button').forEach((el) => {
+      el.addEventListener('mouseover', handleHover as EventListener);
+      el.addEventListener('mouseout', handleHoverOut as EventListener);
+    });
+  </script>
+  
+  <style>
+    .cursor {
+      position: fixed;
+      width: 5px;
+      height: 5px;
+      background: #3a3b3d; /* Primary color */
+      border: 2px solid white;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.15s ease, background 0.2s;
+      z-index: 9999;
+    }
+    .cursor.hover {
+      transform: scale(2);
+      background: #d2cece; /* Secondary color */
+    }
+  </style>
+  
+  <div class="cursor"></div>
+  
